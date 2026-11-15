@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace EventBusDeluxe
 {
-    /// <summary> A custom event bus that works just like signals in Godot, but is completely decoupled and is not affected by refactoring function names.
-    /// Custom event types can be defined anywhere, but they must be a struct and are conventionally defined in [[EventTypes.cs]] and end with "Event"
+    /// <summary> A "fire and forget" based event bus system that allows different parts of your C# projects to communicate in a fully decoupled way.
+    /// Event types are structs that contain relevant information for the event that just ocurred. They typically end with "Event," but this is not necessary
+    /// See Samples.cs for examples of how this system works
     ///  </summary>
     public static class EventBusDeluxe
     {
         private static readonly Dictionary<Type, List<Delegate>> subscriberDict = new Dictionary<Type, List<Delegate>>();
 
-        /// <summary> Subscribes an action to the event bus for a given event type</summary>
+        /// <summary> Subscribes an action to the event bus for a given event type
+        /// </summary>
         public static void Subscribe<TEvent>(Action<TEvent> action)
         {
             Type eventType = typeof(TEvent);

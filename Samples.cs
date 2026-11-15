@@ -1,5 +1,8 @@
 using Godot;
-namespace EventBusDeluxe{
+
+// Note, these are examples that examples taken from Godot projects, but this system should work with any C# project
+namespace EventBusDeluxe
+{
 
     public struct SpawnBulletImpactParticlesEvent
     {
@@ -9,13 +12,6 @@ namespace EventBusDeluxe{
         public Vector3 impactNormal;
         /// <summary> The particles to spawn in </summary>
         public PackedScene bulletImpactParticlesScene;
-    }
-
-    /// <summary> Fires when the player changes their grab mode. </summary>
-    public struct PlayerChangedGrabModeEvent
-    {
-        /// <summary> Boolean to represent if the active grab mode is "toggle" (true) or is "hold" (false) </summary>
-        public bool isToggleGrabModeOn;
     }
 
     public struct TriggerExplosionEvent
@@ -28,10 +24,11 @@ namespace EventBusDeluxe{
 
     public struct StopNonUIPlayerInputEvent
     {
-
+        // While events typically contain relevant info, this is not strictly necessary
     }
 
-    public struct PlayerHasDiedEvent() {
+    public struct PlayerHasDiedEvent
+    {
         public RigidBody3D deadPlayerNode;
         public Node nodeThatCausedPlayerDeath;
     }
