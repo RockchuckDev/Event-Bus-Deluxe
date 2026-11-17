@@ -62,7 +62,6 @@ Every function that has subscribed to SpawnFireEvent (such as SpawnFireFunction)
 
 To unsubscribe our SpawnFireFunction from SpawnFireEvent, we would write:
 ```C#
-EventBusDeluxe.UnSubscribe<SpawnFireEvent>(SpawnFireFunction);
-
+EventBusDeluxe.Unsubscribe<SpawnFireEvent>(SpawnFireFunction);
 ```
 And that's all. SpawnFireEvent will no longer be called when SpawnFireEvent is Fired.
