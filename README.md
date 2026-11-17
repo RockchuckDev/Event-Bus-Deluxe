@@ -1,9 +1,14 @@
 # Event Bus Deluxe
 
 ## Features
-- Decoupled communication
-- Multiple subscribers per event
-- Works with dynamically created elements
+### Decoupled communication
+Allowing System A to communicate with System B in a decoupled way means you can completely remove or refactor System B without breaking System A.
+
+### Multiple subscribers per event
+0 subscribers or 5,000 subscribers are functionally identical
+
+### Works with dynamically created objects
+Functions can be subscribed and unsubscribed at runtime
 
 # Installation
 Copy EventBusDeluxe.cs to your project (that's it).
