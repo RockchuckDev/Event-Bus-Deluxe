@@ -1,13 +1,11 @@
 # Event Bus Deluxe
-
-## Features
-### Decoupled communication
+## Decoupled communication
 Allowing System A to communicate with System B in a decoupled way means you can completely remove or refactor System B without breaking System A.
 
-### Multiple subscribers per event
+## Multiple subscribers per event
 0 subscribers or 5,000 subscribers are functionally identical
 
-### Works with dynamically created objects
+## Works with dynamically created objects
 Functions can be subscribed and unsubscribed at runtime
 
 # Installation
