@@ -2,7 +2,9 @@
 
 ## Overview
 Have you ever had to replace an old particle system in your game with a new one? And had to spend hours dealing with broken scripts that still try to use the old system?
+
 Do you wish there was a way for a single node to communicate with thousands without having to manually set up thousands of signal connections?
+
 Have you ever wondered if there was a way to connect signals between objects dynamically spawned in a runtime?
 
 Well look no further, Event Bus Deluxe is the solution to these problems and more!
