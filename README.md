@@ -1,23 +1,23 @@
 # Event Bus Deluxe
 
-## Overview
-Have you ever had to replace an old particle system in your game with a new one? And had to spend hours dealing with broken scripts that still try to use the old system?
+## Features
+- Decoupled communication
+- Multiple subscribers per event
+- Works with dynamically created elements
 
-Do you wish there was a way for a single node to communicate with thousands without having to manually set up thousands of signal connections?
+# Installation
+Copy EventBusDeluxe.cs to your project (that's it).
 
-Have you ever wondered if there was a way to connect signals between objects dynamically spawned in a runtime?
-
-Well look no further, Event Bus Deluxe is the solution to these problems and more!
-
+# Usage
 ## Creating Events
 To get started, define a struct that will contain information relevant to your event, like this one:
 
 ``` C#
 public struct SpawnFireEvent{
-	Vector3 location;
-	float duration;
-	float intensity;
-	Color fireColor;
+	public Vector3 location;
+	public float duration;
+	public float intensity;
+	public Color fireColor;
 }
 ```
 
@@ -53,7 +53,8 @@ SpawnFireEvent fireEventData = new SpawnFireEventData{
 }
 EventBusDeluxe.Fire<SpawnFireEvent>(fireEventData);
 ```
-Every function that has subscribed to SpawnFireEvent (such as SpawnFireFunction) will be called, and fireEventData will be passed to all of them. For our examples, this just means that SpawnFireFunction will be called, but we could also subscribe another function that tracks how many fires have been spawned. Or another function that spawns in a hitbox for the fire. Or another that alerts enemies to the presence of fire, and tells them to avoid it. And we aren't limited to just our SpawnFireEvent. We could define SpawnEnemyEvent, or PlayerLeveledUpEvent. You can create as many event structs as you want, and subscribe as many functions to each event as you want.
+Every function that has subscribed to SpawnFireEvent (such as SpawnFireFunction) will be called, and fireEventData will be passed to all of them.
+
 ## Unsubscribing Functions From Events
 
 To unsubscribe our SpawnFireFunction from SpawnFireEvent, we would write:
