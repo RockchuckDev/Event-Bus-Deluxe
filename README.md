@@ -3,13 +3,13 @@
 Allowing System A to communicate with System B in a decoupled way means you can completely remove or refactor System B without breaking System A.
 
 ## Multiple subscribers per event
-0 subscribers or 5,000 subscribers are functionally identical
+0 subscribers or 5,000 subscribers are functionally identical.
 
 ## Works with dynamically created objects
-Functions can be subscribed and unsubscribed at runtime
+Functions can be subscribed and unsubscribed to events at runtime.
 
 # Installation
-Copy EventBusDeluxe.cs to your project (that's it).
+Copy EventBusDeluxe.cs to your project (and optionally Samples.cs).
 
 # Usage
 ## Creating Events
